@@ -99,6 +99,16 @@ footer {
     height: 100%;
     margin: 0 auto;
 
+    & .back {
+        display: flex;
+        position: absolute;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+        width: fit-content;
+        height: 100%;
+    }
+
     & article {
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);

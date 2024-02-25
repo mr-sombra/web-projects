@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tinder Swipe</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
     <main>
         <section>
@@ -14,23 +16,11 @@
             </header>
 
             <div class="cards">
-                <article>
-                    <img src="/01-swipe-card/photos/1.webp" alt="Samantha, redhead girl, 23 years old" />
-                    <h2>Samantha<span>23</span></h2>
-                    <div class="choice like">LIKE</div>
-                    <div class="choice nope">NOPE</div>
-                </article>
-
-                <article>
-                    <img src="/01-swipe-card/photos/2.webp" alt="Pedro, brown hair man, 25 years old" />
-                    <h2>Pedro<span>25</span></h2>
-                    <div class="choice like">LIKE</div>
-                    <div class="choice nope">NOPE</div>
-                </article>
+                <span class="back">Tienes gustos exigentes, no hay más personas por mostrar...</span>
             </div>
 
             <footer>
-                <button class="is-reload" aria-label="reload" onclick=reload()></button>
+                <button class="is-reload" aria-label="reload" id="reload"></button>
                 <button class="is-skip is-big" aria-label="skip"></button>
                 <button class="is-superlike" aria-label="superlike"></button>
                 <button class="is-like is-big" aria-label="like"></button>
@@ -40,4 +30,5 @@
     </main>
     <script type="module" src="script.js"></script>
 </body>
+
 </html>

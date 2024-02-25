@@ -2,6 +2,46 @@ const DECISION_THRESHOLD = 75
 let isAnimating = false
 let pullDeltaX = 0 // Card pulling distance
 
+const data = [
+  {
+    name: "Pedro",
+    age: 25,
+    image: "/01-swipe-card/photos/2.webp",
+    alt: "Pedro, brown hair man, 25 years old"
+  },
+  {
+    name: "Samantha",
+    age: 23,
+    image: "/01-swipe-card/photos/1.webp",
+    alt: "Samantha, redhead girl, 23 years old"
+  },
+  {
+    name: "Lia",
+    age: 26,
+    image: "/01-swipe-card/photos/3.webp",
+    alt: "Lia, brown hair girl, 26 years old",
+  }
+]
+
+const $cardContainer = document.querySelector('.cards')
+const $reloadButton = document.getElementById('reload')
+
+
+const cardsRender = () => {
+  data.map((card) => {
+    const { name, image, alt, age } = card
+    const postCard = document.createElement('article')
+    postCard.classList.add('cards')
+    postCard.innerHTML = `
+      <img src=${image} alt=${alt} />
+      <h2>${name}<span>${age}</span></h2>
+      <div class="choice like">LIKE</div>
+      <div class="choice nope">NOPE</div>
+    `
+    $cardContainer.appendChild(postCard)
+  })
+}
+
 function startDrag(event) {
   if (isAnimating) return
 
@@ -84,5 +124,12 @@ function startDrag(event) {
   }
 }
 
+function reload() {
+  cardsRender()
+}
+
+cardsRender()
+
 document.addEventListener("mousedown", startDrag)
 document.addEventListener("touchstart", startDrag, { passive: true })
+$reloadButton.addEventListener("click", reload)
