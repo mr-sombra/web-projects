@@ -20,12 +20,77 @@ const data = [
     age: 26,
     image: "/01-swipe-card/photos/3.webp",
     alt: "Lia, brown hair girl, 26 years old",
-  }
+  },
+  {
+    name: "성진",
+    age: "22",
+    image: "/01-swipe-card/photos/4.webp",
+    alt: "성진, brown hair man, 22 years old"
+  },
+  {
+    name: "Imari",
+    age: 23,
+    image: "/01-swipe-card/photos/5.webp",
+    alt: "Imari, black hair girl, 23 years old"
+  },
+  {
+    name: "Yan",
+    age: 23,
+    image: "/01-swipe-card/photos/6.webp",
+    alt: "Yan, black hair girl, 23 years old"
+  },
+  {
+    name: "Hui",
+    age: 23,
+    image: "/01-swipe-card/photos/7.webp",
+    alt: "Hui, black hair girl, 23 years old"
+  },
+  {
+    name: "Sumie",
+    age: 23,
+    image: "/01-swipe-card/photos/8.webp",
+    alt: "Sumie, black hair girl, 23 years old"
+  },
+  {
+    name: "Hanako",
+    age: 23,
+    image: "/01-swipe-card/photos/9.webp",
+    alt: "Hanako, black hair girl, 23 years old"
+  },
+  {
+    name: "Rona",
+    age: 23,
+    image: "/01-swipe-card/photos/10.webp",
+    alt: "Rona, black hair girl, 23 years old"
+  },
+  {
+    name: "Mitoki",
+    age: 23,
+    image: "/01-swipe-card/photos/11.webp",
+    alt: "Mitoki, black hair girl, 23 years old"
+  },
+  {
+    name: "Asumi",
+    age: 23,
+    image: "/01-swipe-card/photos/12.webp",
+    alt: "Asumi, black hair girl, 23 years old"
+  },
+  {
+    name: "Chieka",
+    age: 23,
+    image: "/01-swipe-card/photos/13.webp",
+    alt: "Chieka, black hair girl, 23 years old"
+  },
+  {
+    name: "Miko",
+    age: 23,
+    image: "/01-swipe-card/photos/14.webp",
+    alt: "Miko, black hair girl, 23 years old"
+  },
 ]
 
 const $cardContainer = document.querySelector('.cards')
 const $reloadButton = document.getElementById('reload')
-
 
 const cardsRender = () => {
   data.map((card) => {
@@ -125,7 +190,27 @@ function startDrag(event) {
 }
 
 function reload() {
-  cardsRender()
+  const animation = document.querySelector(".reload-animation")
+
+  if (!animation) {
+    $reloadButton.classList.add("reload-animation")
+
+    // Trigger reflow
+    $reloadButton.offsetHeight;
+
+    // Remove existing cards
+    $cardContainer.innerHTML = `
+    <span class="back">¡Vaya, no hay más personas por mostrar!</span>
+    `
+
+    // Render new set of cards
+    cardsRender();
+
+    setTimeout(() => {
+      // Remove animation class after cards are rendered
+      $reloadButton.classList.remove("reload-animation")
+    }, 600);
+  }
 }
 
 cardsRender()

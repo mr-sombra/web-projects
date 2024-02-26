@@ -107,6 +107,7 @@ footer {
         padding: 10px;
         width: fit-content;
         height: 100%;
+        text-wrap: pretty;
     }
 
     & article {
@@ -197,4 +198,9 @@ footer {
             font-weight: 400;
         }
     }
+}
+
+.reload-animation {
+    transition: transform 0.6s;
+    transform: rotate(-360deg);
 }
