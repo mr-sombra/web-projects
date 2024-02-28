@@ -93,6 +93,9 @@ const $cardContainer = document.querySelector('.cards')
 const $reloadButton = document.getElementById('reload')
 
 const cardsRender = () => {
+  $cardContainer.innerHTML = `
+  <span class="back">¡Vaya, no hay más personas por mostrar!</span>
+  `
   data.map((card) => {
     const { name, image, alt, age } = card
     const postCard = document.createElement('article')
