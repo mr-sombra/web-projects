@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Local Llama</title>
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body>
+        <main>
+            <ul>
+                <li class="message bot">
+                    <span>Llama</span>
+                    <p>Llama response</p>
+                </li>
+
+                <li class="message user">
+                    <span>You</span>
+                    <p>This is your response</p>
+                </li>
+                
+                <li class="message user">
+                    <span>You</span>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, soluta optio explicabo quo deserunt sint similique laudantium hic voluptatem quaerat consequatur quibusdam adipisci nihil architecto nesciunt. Architecto iure atque veritatis.</p>
+                </li>
+            </ul>
+        </main>
+
+        <form>
+            <input placeholder="Write your message here...">
+            <button>Send</button>
+        </form>
+
+        <template id="message-template">
+            <li class="message">
+                <span></span>
+                <p></p>
+            </li>
+        </template>
+    </body>
+    <script src="script.js"></script>
+</html>
